@@ -17,17 +17,7 @@ title: string
 duration: number
 }
 
-// Step 3: פונקציה מקבלת מערך של פריטים, ופונקצית פילטור. ומחזירה מערך מפולטר של פריטים
-// function filterItems<T>(items: T[], filterFn: (item: T) => boolean): T[] {
-//     const filteredItems: T[] = [];
-//     let fil = items.filter(filterFn)
-//     // for (const item of items) {
-//     //   if (filterFn(item)) {
-//     filteredItems.push(fil);
-//     //   }
-//     // }
-//     return filteredItems;
-//   }
+
 function filterItems<T>(items: T[], filterFn: (item: T) => boolean): T[]{
     return items.filter(filterFn);
 }
@@ -60,5 +50,5 @@ const longDvds = filterItems(libraryItems, item => item.type === ItemType.DVD &&
 printItemsData(longDvds);
 
 // Step 7:  Harper Lee ממשו את פונקצית הפילטור כך שתחזיר רק ספרים של 
-const harperLeeBooks = filterItems(libraryItems, item => item.type === ItemType.Book && (item as Book).author === 'Harper Lee');
+const harperLeeBooks = filterItems(libraryItems, item => item.type === ItemType.Book && item.author === 'Harper Lee');
 printItemsData(harperLeeBooks);
